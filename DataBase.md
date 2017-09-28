@@ -1,7 +1,7 @@
-#数据库系统概述
-##DataBase数据库
+# 数据库系统概述
+## DataBase数据库
 数据库是长期储存在计算机内、有组织的、可共享的大量数据的集合。数据库中的数据按一定的数据模型组织、描述和储存，具有较小的冗余度、较高的数据独立性和易扩展性，并可为各种用户共享。
-##DatabBase Management System数据库管理系统
+## DatabBase Management System数据库管理系统
 DBMS与操作系统一样是计算机的基础软件
 
 - 数据定义功能 DDL Data Definition Language
@@ -11,7 +11,7 @@ DBMS与操作系统一样是计算机的基础软件
 - 数据库的建立与维护
 - 其他功能
 
-##DataBase System 数据库系统
+## DataBase System 数据库系统
 数据库系统是由数据库、数据库管理系统、应用程序和数据库管理员（DataBase Administrator, DBA)组成的存储、管理、处理和维护数据的系统。
 
 #数据管理技术的产生和发展
