@@ -49,15 +49,15 @@ CASCADE级联收回
 通过角色来实现将一组权限授予一个用户。 步骤如下:
 
 1. 首先创建一个角色 R1 
-```CREATE ROLE R1;```
+`CREATE ROLE R1;`
 2. 然后使用GRANT语句，使角色R1拥有Student表的SELECT、 UPDATE、INSERT权限
-```GRANT SELECT，UPDATE，INSERT ON TABLE Student
-TO R1;```
+`GRANT SELECT，UPDATE，INSERT ON TABLE Student
+TO R1;`
 3. 将这个角色授予王平，张明，赵玲。使他们具有角色R1所包含的 全部权限
-```GRANT R1
-TO 王平，张明，赵玲;```
+`GRANT R1
+TO 王平，张明，赵玲;`
 4. 可以一次性通过R1来回收王平的这3个权限
-```REVOKE R1 FROM 王平;```
+`REVOKE R1 FROM 王平;`
 
 ### 强制存取控制方法
 
