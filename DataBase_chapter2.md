@@ -13,8 +13,8 @@
 攻击(attack):可能导致破坏的行为，发起人被称为攻击者
 
 基本要素：Confidentiality/Integrity/Availability/Non-repudiation(不可抵赖性)/可审计性
-
-##数据库安全控制机制
+ 
+## 数据库安全控制机制
 - (基于口令的)用户鉴别(散列函数/OTP/智能卡/生物特征）
 - 存取控制（包括自主存取控制 Discretionary Access Control DAC,强制存取控制 Mandatory Access Control MAC)
    - 用户权限定义
