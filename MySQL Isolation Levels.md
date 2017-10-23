@@ -17,7 +17,7 @@ READ\_COMMITTED & READ_UNCOMMITTED: in situations such as bulk reporting where p
 snapshot  
 A representation of data at a particular time。 which remains the same even as changes are committed by other transactions. Used by certain isolation levels to <mark>allow consistent reads</mark>.
 
-###consistent non-locking read:
+### consistent non-locking read:
 - plain SELECT statements
  
 同一个transaction内的读操作是一致的，在第一次select操作时生成了一个现有表的snapshot，之后的读都从这个snapshot中读。
