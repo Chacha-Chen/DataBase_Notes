@@ -15,7 +15,7 @@ READ\_COMMITTED & READ_UNCOMMITTED: in situations such as bulk reporting where p
 
 ## REPEATABLE_READ
 snapshot  
-A representation of data at a particular time。 which remains the same even as changes are committed by other transactions. Used by certain isolation levels to <mark>allow consistent reads</mark>.
+A representation of data at a particular time。 which remains the same even as changes are committed by other transactions. Used by certain isolation levels to **allow consistent reads**.
 
 ### consistent non-locking read:
 - plain SELECT statements
@@ -53,12 +53,12 @@ SELECT statements are performed in a nonlocking fashion, but a possible earlier 
 
 ## SERIALIZABLE
 
-This level is like REPEATABLE READ, but InnoDB implicitly <mark>converts all plain SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit is disabled</mark>. If autocommit is enabled, the SELECT is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (nonlocking) read and need not block for other transactions. (To force a plain SELECT to block if other transactions have modified the selected rows, disable autocommit.)
+This level is like REPEATABLE READ, but InnoDB implicitly **converts all plain SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit is disabled**. If autocommit is enabled, the SELECT is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (nonlocking) read and need not block for other transactions. (To force a plain SELECT to block if other transactions have modified the selected rows, disable autocommit.)
  
  
-#Consistent Nonlocking Reads
+# Consistent Nonlocking Reads
 
-A consistent read means that InnoDB uses <mark>multi-versioning</mark> to present to a query a snapshot of the database at a point in time. **The query sees the changes made by transactions that committed before that point of time, and no changes made by later or uncommitted transactions.** <mark>The exception to this rule is that the query sees the changes made by earlier statements **within the same transaction**.</mark> This exception causes the following anomaly: If you update some rows in a table, a SELECT sees the latest version of the updated rows, but it might also see older versions of any rows. If other sessions simultaneously update the same table, the anomaly means that you might see the table in a state that never existed in the database.
+A consistent read means that InnoDB uses <mark>multi-versioning</mark> to present to a query a snapshot of the database at a point in time. **The query sees the changes made by transactions that committed before that point of time, and no changes made by later or uncommitted transactions.The exception to this rule is that the query sees the changes made by earlier statements within the same transaction**.This exception causes the following anomaly: If you update some rows in a table, a SELECT sees the latest version of the updated rows, but it might also see older versions of any rows. If other sessions simultaneously update the same table, the anomaly means that you might see the table in a state that never existed in the database.
 
 The exception to this rule is that the query sees the changes made by earlier statements within the same transaction. 
 
@@ -66,7 +66,7 @@ The exception to this rule is that the query sees the changes made by earlier st
 
 - READ COMMITTED isolation level, each consistent read within a transaction sets and reads its own fresh snapshot.
 
-<mark>Consistent read is the default mode in which InnoDB processes SELECT statements in READ COMMITTED and REPEATABLE READ isolation levels. A consistent read does not set any locks on the tables it accesses, and therefore other sessions are free to modify those tables at the same time a consistent read is being performed on the table.</mark>
+**Consistent read is the default mode in which InnoDB processes SELECT statements in READ COMMITTED and REPEATABLE READ isolation levels. A consistent read does not set any locks on the tables it accesses, and therefore other sessions are free to modify those tables at the same time a consistent read is being performed on the table.**
 
  A consistent read does not set any locks on the tables it accesses, and therefore other sessions are free to modify those tables at the same time a consistent read is being performed on the table.
 
